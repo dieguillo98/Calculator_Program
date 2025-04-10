@@ -1,39 +1,46 @@
-def addition(num1, num2):
-    return f'Result: {num1 + num2}'
+def addition(x,y):
+    return f'Result: {x + y}'
 
-def subtraction(num1, num2):
-    return f'Result {num1 - num2}'
+def subtraction(x,y):
+    return f'Result: {x - y}'
 
-def multiplication(num1, num2):
-    return f'Result {num1 * num2}'
+def multiplication(x,y):
+    return f'Result: {x * y}'
 
-def division(num1, num2):
+def division(x,y):
     try:
-        return num1 / num2
+        return f'Result {x / y}'
     except ZeroDivisionError:
-        print("Numbers cannot be divided by zero.")
+        return f'Numbers cannot be divided by zero'
 
 while True:
-    symbol = input("Math symbol: ")
-    if symbol in ("+","-","*","/"):
+    symbol = input('Math symbol: ')
+    if symbol in ('+','-','*','/'):
         try:
-            num1 = float(input("First number: "))
-            num2 = float(input("Enter second number: "))
-        except ValueError: 
-            print("Invalid numbers, try again")
+            num1 = float(input('First number: '))
+            num2 = float(input('Second number: '))
+        except ValueError:
+            print('Invalid numbers, try again')
             continue
-    
+
         match symbol:
-            case "+":
-                print(addition(num1,num2))
-            case "-":
+            case  '+':
+                print(addition(num1, num2))
+            
+            case '-':
                 print(subtraction(num1, num2))
-            case "*":
+
+            case '*':
                 print(multiplication(num1, num2))
-            case "/":
-                print(division(num1,num2))
-        next_calculation = input("Do you want to continoues: [y,n]: ")
-        if next_calculation == "n":
+            
+            case '/':
+                print(division(num1, num2))
+
+        
+        next_operation = input("Do you want to continue? [y,n]: ")
+        if next_operation == 'y':
+            continue
+        else:
+            print("Bye, Bye!")
             break
-    else:
-        print("Invalid input")
+    print("Invalid input")
