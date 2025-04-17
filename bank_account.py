@@ -34,16 +34,16 @@ def main():
 
                 """)
         
-        user = int(input("Enter your choice: [1-4]: "))
+        user = input("Enter your choice: [1-4]: ")
 
         match user:
-            case 1:
+            case '1':
                 show_balance(balance)
-            case 2:
+            case '2':
                 balance += deposit()
-            case 3:
+            case '3':
                 balance -= withdraw(balance)
-            case 4:
+            case '4':
                 is_running = False
             case _default:
                 print('That is not a valid choice.')
