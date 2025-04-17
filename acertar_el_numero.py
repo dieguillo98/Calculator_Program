@@ -16,4 +16,3 @@ for intentos in range(1,11,1):
         break
 if intentos == 10 and not acierto:
     print(f'ERROR!!!... No pudiste adivinar, el numero secreto era: {numero_secreto}')
-    print(f'El numero secreto era: {numero_secreto}')
